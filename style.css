@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+
+
+body[data-theme="dark"]{
+    --bodyBackground: hsl(222, 26%, 31%);/*main background*/
+    --Toggle_Keypad_background: hsl(223, 31%, 20%);/*toggle background, keypad background*/
+    --screen_Background: hsl(224, 36%, 15%);
+  
+    --key_hover_Background: hsl(225, 21%, 49%);
+    --key_Del_Res_shadow: hsl(224, 28%, 35%);
+    --key_Del_Res: hsl(223, 28%, 40%);
+    
+    --toggle_equal_bg: hsl(6, 63%, 50%);
+    --toggle_equal_hover: hsl(6, 60%, 60%);
+    --equal_shadow: hsl(6, 70%, 34%);
+    
+    --key_background: hsl(30, 25%, 89%);
+    --key_shadow: hsl(28, 16%, 65%);
+    --key_hover:hsl(0, 0%, 100%);
+   
+    --White1: hsl(0, 0%, 100%);   
+    --text_color_key: hsl(221, 14%, 31%);  
+    --equal_text:hsl(0, 0%, 100%); 
+    --text_color_display: hsl(0, 0%, 100%);   
+}
+
+body[data-theme="light"]{
+    --bodyBackground: hsl(0, 0%, 90%);/*main background*/
+    --Toggle_Keypad_background: hsl(0, 5%, 81%);/*toggle background, keypad background*/
+    --screen_Background: hsl(0, 0%, 93%);
+  
+    --key_hover_Background: hsl(185, 41%, 43%);
+    --key_Del_Res_shadow: hsl(185, 58%, 25%);
+    --key_Del_Res: hsl(185, 42%, 37%);
+    
+    --toggle_equal_bg: hsl(25, 98%, 40%);
+    --toggle_equal_hover: hsl(6, 60%, 60%);
+    --equal_shadow: hsl(25, 99%, 27%);
+    
+    --key_background: hsl(30, 25%, 89%);
+    --key_shadow: hsl(28, 16%, 65%);
+    --key_hover:hsl(0, 0%, 100%);
+   
+
+    --White1: hsl(60, 10%, 19%);  
+    --equal_text:hsl(0, 0%, 100%);
+    --text_color_key: hsl(60, 10%, 19%); 
+    --text_color_display: hsl(60,10%,19%);   
+}
+
+body[data-theme="darker"]{
+    --bodyBackground: hsl(268, 75%, 9%);/*main background*/
+    --Toggle_Keypad_background: hsl(268, 71%, 12%);/*toggle background, keypad background*/
+    --screen_Background: hsl(268, 71%, 12%);
+  
+    --key_hover_Background: hsl(290, 48%, 47%);
+    --key_Del_Res_shadow: hsl(290, 70%, 36%);
+    --key_Del_Res: hsl(268, 47%, 21%);
+    
+    --toggle_equal_bg: hsl(176, 100%, 44%);
+    --toggle_equal_hover: hsl(177, 92%, 70%);
+    --equal_shadow: hsl(177, 92%, 70%);
+    
+    --key_background: hsl(281, 89%, 26%);
+    --key_shadow: hsl(285, 91%, 52%);
+    --key_hover: hsl(281, 44%, 42%);
+   
+
+
+    --White1: hsl(0, 0%, 100%);  
+    --text_color_key: hsl(52, 100%, 62%); 
+    --equal_text:hsl(198, 20%, 13%);
+    --text_color_display: hsl(0, 0%, 100%);   
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bodyBackground);
+    color: var(--White1);
+    font-family: 'League Spartan', sans-serif;
+    padding: 0 20px;
+    transition: 0.5s;
+}
+
+.main-container{
+    max-width: 400px;
+    height: 500px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    color: var(--text_color);
+}
+
+.schemes_container{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.theme_title{
+    margin: 0 5px ;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text_color);
+}
+
+.themes{
+    margin: 0 8px;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text_color);
+}
+
+
+.toggle_container{
+    width: 100px;
+    height: 15px;
+    background-color: var(--Toggle_Keypad_background);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    transition: translate 1s;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    background-color: var(--toggle_equal_bg);
+    border-radius: 50%;
+    margin-left: 10px ;
+    transition: 1s;
+}
+
+.circle_move0{
+    margin-left: 10px;
+}
+.circle_move1{
+    margin-left: 42px;
+}
+
+.circle_move2{
+    margin-left: 79px;
+}
+
+.display_container{
+    max-width: 100%;
+    height: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: end;
+    background-color: var(--screen_Background);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.calc-display{
+    font-size: 30px;
+    color: var(--text_color_display);
+}
+
+.btns-container{
+    max-width: 100%;
+    background-color: var(--Toggle_Keypad_background);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.btns-container button{
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    background-color: var(--key_background);
+    margin: 7px;
+    border-radius: 10px;
+    color: var(--text_color_key);
+    cursor: pointer;
+    box-shadow:  var(--key_shadow) 0px 4px 0px;
+    transition: 300ms;
+}
+
+.btns-container button:hover{
+    background-color: var(--key_hover);
+}
+
+.btns-container .del{
+    background-color: var(--key_Del_Res);
+    box-shadow: var(--key_Del_Res_shadow) 0px 4px 0px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.btns-container .del:hover{
+    background-color: var(--key_hover_Background);
+}
+
+.btns-container .reset{
+    background-color: var(--key_Del_Res);
+    box-shadow: var(--key_Del_Res_shadow) 0px 4px 0px;
+    color: white;
+    grid-column: 1/ 3;
+    text-transform: uppercase;
+}
+
+.btns-container .reset:hover{
+    background-color: var(--key_hover_Background);
+}
+
+.btns-container .equal{
+    grid-column: 5/3;
+    background-color: var(--toggle_equal_bg);
+    box-shadow: var(--equal_shadow) 0px 4px 0px;
+    color: var(--equal_text);
+    transition: 0.5s;
+}
+
+.btns-container .equal:hover{
+    background-color: var(--toggle_equal_hover);
+}
+
+
+
+
+
